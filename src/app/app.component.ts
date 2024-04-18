@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mannan';
+  selectedLink: string = 'home';
+
+  setLink(link: string): any {
+    this.selectedLink = link;
+  }
 }

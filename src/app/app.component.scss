@@ -1,0 +1,61 @@
+#page {
+  font-family: Lucida Grande;
+
+  #body {
+    margin: 20vh 28vw;
+  }
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #0b0b0b;
+
+  border-bottom: 1px solid white;
+  height: 60px;
+
+  img {
+    border-radius: 50%;
+  }
+
+  #links {
+    display: flex;
+    padding: 0 50px 0 15px;
+  }
+  #links > * {
+    padding-left: 15px;
+  }
+  .link {
+    cursor: pointer;
+  }
+  .selected {
+    text-decoration: underline;
+  }
+}
+
+button {
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+#intro {
+  margin-top: 33vh;
+  h1 {
+    text-transform: uppercase;
+  }
+}
+
+#about-me {
+  margin-top: 88vh;
+}
+
+#resume {
+  margin-top: 88vh;
+}
+
+#contact {
+}
