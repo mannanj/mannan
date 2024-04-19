@@ -63,8 +63,10 @@ export class AppComponent {
 
   scrollToSection(section: string): void {
     const elem = document.getElementById(section);
-    if (elem) {
-      elem.scrollIntoView();
+    const header = document.getElementById('header');
+    if (elem && header) {
+      window.scrollTo(0, elem.offsetTop - (header.offsetHeight + 40 + 28 + 66));
+      // elem.scrollIntoView(); // this approach had cut off area.
     }
   }
 
