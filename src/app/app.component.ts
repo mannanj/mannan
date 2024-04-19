@@ -19,7 +19,7 @@ export class AppComponent {
       const topShown = rect.top >= 0;
       const bottomShown = rect.bottom <= window.innerHeight;
       if (topShown && bottomShown) {
-        this.setLink('home');
+        this.setLinkUnderl('home');
       }
     }
     if (this.aboutDiv){
@@ -27,7 +27,7 @@ export class AppComponent {
       const topShown = rect.top >= 0;
       const bottomShown = rect.bottom <= window.innerHeight;
       if (topShown && bottomShown) {
-        this.setLink('about');
+        this.setLinkUnderl('about');
       }
     }
     if (this.resumeDiv){
@@ -40,7 +40,7 @@ export class AppComponent {
         Math.floor(100 - ((rect.bottom - windowHeight) / rect.height) * 100) < 1
       )
       if (!onePercentVisible) {
-        this.setLink('resume');
+        this.setLinkUnderl('resume');
       }
     }
     if (this.contactDiv){
@@ -48,7 +48,7 @@ export class AppComponent {
       const topShown = rect.top >= 0;
       const bottomShown = rect.bottom <= window.innerHeight;
       if (topShown && bottomShown) {
-        this.setLink('contact');
+        this.setLinkUnderl('contact');
       }
     }
   }
@@ -57,7 +57,7 @@ export class AppComponent {
   selectedLink: string = 'home';
   darkMode: boolean = true;
 
-  setLink(link: string): any {
+  setLinkUnderl(link: string): any {
     this.selectedLink = link;
   }
 
