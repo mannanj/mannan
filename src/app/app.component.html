@@ -1,14 +1,21 @@
 
 <div id="page">
   <div id="header">
-    <img src="assets/mannan.jpg" width="50" height="50">
+    <div id="picture" (click)="setDarkMode()">
+      <img src="assets/mannan.jpg" width="50" height="50">
+      <div id="light-dark-mode">
+        <a id="light" [ngClass]="{ opaqueFifty: darkMode }">🌞</a>
+        <a id="dark" [ngClass]="{ opaqueFifty: !darkMode }">🌛</a>
+      </div>
+    </div>
+
     <div></div>
 
     <div id="links">
-      <div id="home-link" [ngClass]="{ selected: selectedLink === 'home' }" class="link" (click)="setLink('home')">Home</div>
-      <div id="about-link" [ngClass]="{ selected: selectedLink === 'about' }" class="link" (click)="setLink('about')">About</div>
-      <div id="resume-link" [ngClass]="{ selected: selectedLink === 'resume' }" class="link" (click)="setLink('resume')">Resume</div>
-      <div id="contact-link" [ngClass]="{ selected: selectedLink === 'contact' }" class="link" (click)="setLink('contact')">Contact</div>
+      <a id="home-link" [ngClass]="{ selected: selectedLink === 'home' }" class="link" (click)="setLink('home')">Home</a>
+      <a id="about-link" [ngClass]="{ selected: selectedLink === 'about' }" class="link" (click)="setLink('about')">About</a>
+      <a id="resume-link" [ngClass]="{ selected: selectedLink === 'resume' }" class="link" (click)="setLink('resume')">Resume</a>
+      <a id="contact-link" [ngClass]="{ selected: selectedLink === 'contact' }" class="link" (click)="setLink('contact')">Contact</a>
     </div>
   </div>
 

@@ -35,27 +35,64 @@
   .selected {
     text-decoration: underline;
   }
+
+  #picture {
+    display: flex;
+    align-items: center;
+  }
+
+  #picture:hover {
+    cursor: pointer;
+  }
+
+  #light-dark-mode {
+    display: flex;
+  }
+
+  #light,
+  #dark {
+    font-size: 11px;
+  }
+  .opaqueFifty {
+    opacity: 0.5;
+  }
 }
 
 button {
   text-transform: uppercase;
   padding: 5px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+a {
+  color: white;
+}
+a:hover {
+  font-size: 101%;
 }
 
 #intro {
   margin-top: 33vh;
-  h1 {
-    text-transform: uppercase;
-  }
 }
 
 #about-me {
-  margin-top: 88vh;
+  margin-top: 72vh;
 }
 
 #resume {
-  margin-top: 88vh;
+  margin-top: 72vh;
 }
 
 #contact {
+  margin-top: 72vh;
+  height: 55vh;
 }
