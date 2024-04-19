@@ -12,6 +12,10 @@ export class AppComponent {
   @ViewChild('resumeDiv', {static: false}) private resumeDiv: ElementRef<HTMLDivElement>;
   @ViewChild('contactDiv', {static: false}) private contactDiv: ElementRef<HTMLDivElement>;
 
+  // collapsible
+  displayMoreEducation = false;
+  moreEducationShown = 0;
+
   @HostListener('window:scroll', ['$event'])
   isScrolledIntoView(){
     if (this.introDiv){
@@ -65,12 +69,19 @@ export class AppComponent {
     const elem = document.getElementById(section);
     const header = document.getElementById('header');
     if (elem && header) {
-      window.scrollTo(0, elem.offsetTop - (header.offsetHeight + 40 + 28 + 66));
+      window.scrollTo(0, elem.offsetTop - (header.offsetHeight + 40 + 28 + 99));
       // elem.scrollIntoView(); // this approach had cut off area.
     }
   }
 
   setDarkMode(): void {
     this.darkMode = !this.darkMode;
+  }
+
+  // Collapsible
+  toggleDisplayMoreEducation(): void {
+    this.displayMoreEducation = !this.displayMoreEducation;
+    console.log('displayMoreEducation', this.displayMoreEducation);
+    this.moreEducationShown += 1;
   }
 }
