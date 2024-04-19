@@ -20,7 +20,7 @@
   </div>
 
   <div id="body">
-    <div id="intro">
+    <div #introDiv id="intro">
       <h1>Mannan Javid</h1>
       <hr>
       <p>
@@ -30,7 +30,7 @@
 
     </div>
 
-    <div id="about-me">
+    <div #aboutDiv id="about-me">
       <h1>About</h1>
       <hr>
       <p>
@@ -47,7 +47,7 @@
       <button (click)="setLink('resume'); scrollToSection('resume')">View My Resume</button>
     </div>
   
-    <div id="resume">
+    <div #resumeDiv id="resume">
       <h1>Resume</h1>
       <hr>
       <h2>Education</h2>
@@ -113,8 +113,7 @@
       <button (click)="setLink('contact'); scrollToSection('contact')">Get In Touch</button>
     </div>
 
-
-    <div id="contact">
+    <div #contactDiv id="contact">
       <h1>Contact</h1>
       <hr>
       <a href= "mailto: man@javman.is"> man@javman.is </a>
