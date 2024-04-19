@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "mannan-javid"
+  },
+  "targets": {
+    "mannan-javid": {
+      "hosting": {
+        "mannan": [
+          "mannan-javid"
+        ]
+      }
+    }
   }
 }
