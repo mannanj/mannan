@@ -13,8 +13,12 @@ export class AppComponent {
   @ViewChild('contactDiv', {static: false}) private contactDiv: ElementRef<HTMLDivElement>;
 
   // collapsible
-  displayMoreEducation = false;
-  moreEducationShown = 0;
+  displayMoreEd = false;
+  moreEdSectionsShown = 0;
+  displayMoreJobs = false;
+  moreJobsSectionsShown = 0;
+  displayMoreEC = false;
+  moreECSectionsShown = 0;
 
   @HostListener('window:scroll', ['$event'])
   isScrolledIntoView(){
@@ -69,7 +73,7 @@ export class AppComponent {
     const elem = document.getElementById(section);
     const header = document.getElementById('header');
     if (elem && header) {
-      window.scrollTo(0, elem.offsetTop - (header.offsetHeight + 40 + 28 + 99));
+      window.scrollTo(0, elem.offsetTop - (header.offsetHeight + 40 + 28));
       // elem.scrollIntoView(); // this approach had cut off area.
     }
   }
@@ -79,9 +83,33 @@ export class AppComponent {
   }
 
   // Collapsible
-  toggleDisplayMoreEducation(): void {
-    this.displayMoreEducation = !this.displayMoreEducation;
-    console.log('displayMoreEducation', this.displayMoreEducation);
-    this.moreEducationShown += 1;
+  toggleDisplayMoreEd(): void {
+    this.displayMoreEd = true;
+    this.moreEdSectionsShown += 1;
+  }
+
+  toggleDisplayNoMoreEd(): void {
+    this.displayMoreEd = false;
+    this.moreEdSectionsShown = 0;
+  }
+
+  toggleDisplayMoreJobs(): void {
+    this.displayMoreJobs = true;
+    this.moreJobsSectionsShown += 1;
+  }
+
+  toggleDisplayNoMoreJobs(): void {
+    this.displayMoreJobs = false;
+    this.moreJobsSectionsShown = 0;
+  }
+  
+  toggleDisplayMoreEC(): void {
+    this.displayMoreEC = true;
+    this.moreECSectionsShown += 1;
+  }
+
+  toggleDisplayNoMoreEC(): void {
+    this.displayMoreEC = false;
+    this.moreECSectionsShown = 0;
   }
 }

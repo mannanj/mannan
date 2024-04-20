@@ -110,6 +110,11 @@ a:hover {
   .margin-top {
     margin-top: 25px;
   }
+
+  #more-education,
+  #more-jobs {
+    margin-top: 6px;
+  }
 }
 
 #contact {
@@ -125,7 +130,7 @@ a:hover {
   cursor: pointer;
   border: none;
   text-align: left;
-  font-size: 12px;
+  font-size: 9px;
   border: 1px solid white;
   border-radius: 5px;
   text-transform: lowercase;
@@ -143,10 +148,15 @@ a:hover {
 .content {
   background-color: #f1f1f1;
   color: black;
+  padding: 6px;
+  border-radius: 6px;
 
   .section {
     color: black;
     font-size: 80%;
+  }
+  .margin-top-12 {
+    margin-top: 12px;
   }
   a {
     color: black;

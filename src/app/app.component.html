@@ -1,4 +1,5 @@
 
+<!-- TODO: change more and less to just go through infinite cycles of 2x more, 2x less, 2x more, 2x less, etc. -->
 <div id="page">
   <div id="header">
     <div id="picture" (click)="setDarkMode()">
@@ -29,6 +30,7 @@
       </p>
       <button (click)="setLinkUnderl('about'); scrollToSection('about-me')">About me</button>
 
+      <!-- I imagined a light timeline here: simple words like born with year, first computer i used and games and teams i launched, travel I did, initiation work into manhood, and i imagine more personal interests that don't go in my official about me section,  -->
     </div>
 
     <div #aboutDiv id="about-me">
@@ -82,9 +84,9 @@
         </p>
 
         <div id="more-education">
-          <div *ngIf="displayMoreEducation" class="content">
+          <div *ngIf="displayMoreEd" class="content">
 
-            <div class="section margin-top">
+            <div *ngIf="moreEdSectionsShown >=1"  class="section">
               <a href="http://www.georgemason.com" target="_blank"><b>ARCHR Humanoid Robot</b></a>
               <p>2013-2014</p>
               <p>
@@ -94,8 +96,8 @@
               <p style="font-size: 12px; margin-top: 6px;">Humanoid robot published, taken to DARPA robotics challenge, and designed to address Daiichi Nuclear disaster response. Simplistic one-to-one hand-puppetered mimickry with Oculus VR streaming, controllers for ARCHR, Mini-Hubo, and Baxter robots.</p>
             </div>
 
-            <div class="section margin-top">
-              <a href="http://www.georgemason.com" target="_blank"><b>Solar Powered Collaborative Workspace</b></a>
+            <div *ngIf="moreEdSectionsShown >=1" class="section margin-top-12">
+              <a href="http://www.georgemason.com" target="_blank"><b>Solar Collaborative Workspace</b></a>
               <p>2013-2014</p>
               <p>
                 Lead Developer
@@ -104,8 +106,9 @@
               <p style="font-size: 12px; margin-top: 6px;">Contributor who designed mechanics in solidworks 3D and wire drawings.</p>
             </div>
 
-            <div *ngIf="moreEducationShown === 2" class="section margin-top">
-              <a href="http://www.georgemason.com" target="_blank"><b>DC Dome Light Design (family business)</b></a>
+            <!-- TODO: Move to extracurricular. -->
+            <div *ngIf="moreEdSectionsShown == 2" class="section margin-top-12">
+              <a href="http://www.georgemason.com" target="_blank"><b>DC Dome Light (family)</b></a>
               <p>2014</p>
               <p>
                 CAD Designer
@@ -115,8 +118,8 @@
             </div>
 
           </div>
-          <button type="button" class="collapsible" (click)="toggleDisplayMoreEducation()">{{ moreEducationShown === 2 ? 'hide' : 'more'}}</button>
-          
+          <button *ngIf="moreEdSectionsShown < 2" type="button" class="collapsible" (click)="toggleDisplayMoreEd()">more</button>
+          <button *ngIf="moreEdSectionsShown === 2" type="button" class="collapsible" (click)="toggleDisplayNoMoreEd()">less</button>
         </div>
 
       </div>
@@ -130,6 +133,7 @@
         </p>
         <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, ArcGIS, AWS, Java, leadership</p>
         <p style="font-size: 12px; margin-top: 6px;">Led implementation and oversight of developers to deliver features ahead of schedule and improve company-wide velocity. Initiated and introduced major feature rewrites. Exited role due to changing locations.</p>
+        <!-- Do I say it was due to personal reasons? which feels more truthful ... now. -->
       </div>
 
       <div class="section margin-top">
@@ -152,24 +156,89 @@
         <p style="font-size: 12px; margin-top: 6px;">Mid-level frontend engineer on mapping systems that informed national security needs. Champion and advocate for company culture.</p>
       </div>
 
-      <div class="section margin-top">
-        <a href="https://www.mitre.org/" target="_blank"><b>MITRE Corporation</b></a>
-        <p>2016-2018</p>
-        <p>
-          Software Engineer I
-        </p>
-        <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, Python, Python Django, AWS, research</p>
-        <p style="font-size: 12px; margin-top: 6px;">Engineer, researcher and experimenter in national initiatives addressing cloud, cyber security, and tax system shortages.</p>
+      <div id="more-jobs">
+        <div *ngIf="displayMoreJobs">
+
+          <div class="section margin-top">
+            <a href="https://www.mitre.org/" target="_blank"><b>MITRE Corporation</b></a>
+            <p>2016-2018</p>
+            <p>
+              Software Engineer I
+            </p>
+            <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, Python, Python Django, AWS, research</p>
+            <p style="font-size: 12px; margin-top: 6px;">Engineer, researcher and experimenter in national initiatives addressing cloud, cyber security, and tax system shortages.</p>
+          </div>
+
+          <div *ngIf="moreJobsSectionsShown >=1" class="section margin-top">
+            <a href="https://www.electric.coop/" target="_blank"><b>America's Electric Cooperatives</b></a>
+            <p>2014-2016 (contract)</p>
+            <p>
+              Software Engineer
+            </p>
+            <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, jQuery, Python, Python-Flask, research</p>
+            <p style="font-size: 12px; margin-top: 6px;">Fullstack engineer for America's cooperatives. Contract role committed to stewarding sustainability in energy generation.</p>
+          </div>
+
+          <div *ngIf="moreJobsSectionsShown == 2" class="section margin-top">
+            <a href="https://meal-fairy-ce3bf.web.app/" target="_blank"><b>Meal Fairy, LLC</b></a>
+            <p>2018 (self-employed)</p>
+            <p>
+              Founder
+            </p>
+            <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, Firebase, Stripe, startup, marketing</p>
+            <p style="font-size: 12px; margin-top: 6px;">Founder for a plate to door food delivery startup in the greater Washington DC area.</p>
+          </div>
+
+        </div>
+
+        <button *ngIf="moreJobsSectionsShown < 2" type="button" class="collapsible" (click)="toggleDisplayMoreJobs()">more</button>
+        <button *ngIf="moreJobsSectionsShown === 2" type="button" class="collapsible" (click)="toggleDisplayNoMoreJobs()">less</button>
       </div>
 
+      <h2>Extracurriculars</h2>
+
       <div class="section margin-top">
-        <a href="https://www.electric.coop/" target="_blank"><b>America's Electric Cooperatives</b></a>
-        <p>2014-2016 (contract)</p>
-        <p>
-          Software Engineer
-        </p>
-        <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, jQuery, Python, Python-Flask, research</p>
-        <p style="font-size: 12px; margin-top: 6px;">Fullstack engineer for America's cooperatives. Contract role committed to stewarding sustainability in energy generation.</p>
+        <b>Substitute Teacher</b>
+        <p>2024</p>
+        <p style="font-size: 12px; margin-top: 6px;">Public school teacher and instructional assistant for elementary, middle and high schools across Fairfax County and Southern Bethesda in Maryland and Virginia across English, Math, for emotionally limited and special needs students.</p>
+      </div>
+
+      <div id="more-ec">
+        <div *ngIf="displayMoreEC">
+
+          <div *ngIf="moreECSectionsShown >=1"  class="section margin-top">
+            <a href="https://appliedjung.com" target="_blank"><b>Volunteering</b></a>
+            <p>2013-present</p>
+            <p style="font-size: 12px; margin-top: 6px;">
+              Volunteering and service across a variety of initiatives including: Food distribution and drives, STEM Students Lego Mindstorm & ARCHR robotics demo, Local community initiatives for the underserved and more.
+            </p>
+          </div>
+
+          <div *ngIf="moreECSectionsShown >=1"  class="section margin-top">
+            <b>Nomadic Travel</b>
+            <p>2020-2023</p>
+            <p style="font-size: 12px; margin-top: 6px;">Travel and living in a variety of locations from the West Coast, California, stewarding sustainability in ecovillages in California and Hawaii, to car camping across national parks across Washington, Oregon and California,  </p>
+          </div>
+
+          <div *ngIf="moreECSectionsShown == 2" class="section margin-top">
+            <a href="https://appliedjung.com" target="_blank"><b>Applied Jung,</b></a>
+            <br>
+            <a href="https://embodiedmasculine.com/missing-nutrient-in-masculinity/" target="_blank"> <b>Embodied Masculinity</b></a>
+            <p>2021-present</p>
+            <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Analytical psychology, Internal family systems, embodiment, yoga, mindfulness</p>
+            <p style="font-size: 12px; margin-top: 6px;">Initiate into Jungian individuation through study of analytical psychology and it's application through embodiment, analysis, and awareness training. Initiated through rites of passage into a positive and nurturing masculinity.</p>
+          </div>
+    
+          <div *ngIf="moreECSectionsShown == 2" class="section margin-top">
+            <a href="https://thebeingman.com" target="_blank"><b>Being Man Project</b></a>
+            <br>
+            <p>2024</p>
+            <p style="font-size: 12px; margin-top: 6px;">Founder of a community initiative to offer a space for men to receive support, develop trust, and cultivate brotherly bonds.</p>
+          </div>
+        </div>
+
+        <button *ngIf="moreECSectionsShown < 2" type="button" class="collapsible" (click)="toggleDisplayMoreEC()">more</button>
+        <button *ngIf="moreECSectionsShown === 2" type="button" class="collapsible" (click)="toggleDisplayNoMoreEC()">less</button>
       </div>
 
       <button (click)="setLinkUnderl('contact'); scrollToSection('contact')">Get In Touch</button>
