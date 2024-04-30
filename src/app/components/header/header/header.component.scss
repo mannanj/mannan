@@ -1,0 +1,51 @@
+#main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #0b0b0b;
+
+  border-bottom: 1px solid white;
+  height: 60px;
+}
+
+#picture {
+  display: flex;
+  align-items: center;
+}
+
+#picture:hover {
+  cursor: pointer;
+}
+
+img {
+  border-radius: 50%;
+}
+
+#links {
+  display: flex;
+  padding: 0 50px 0 15px;
+}
+#links > * {
+  padding-left: 15px;
+}
+.link {
+  cursor: pointer;
+}
+.selected {
+  text-decoration: underline;
+}
+
+#light-dark-mode {
+  display: flex;
+}
+
+#light,
+#dark {
+  font-size: 11px;
+}
+.opaqueFifty {
+  opacity: 0.5;
+}

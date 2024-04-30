@@ -6,159 +6,16 @@
   }
 }
 
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  background-color: #0b0b0b;
-
-  border-bottom: 1px solid white;
-  height: 60px;
-
-  img {
-    border-radius: 50%;
-  }
-
-  #links {
-    display: flex;
-    padding: 0 50px 0 15px;
-  }
-  #links > * {
-    padding-left: 15px;
-  }
-  .link {
-    cursor: pointer;
-  }
-  .selected {
-    text-decoration: underline;
-  }
-
-  #picture {
-    display: flex;
-    align-items: center;
-  }
-
-  #picture:hover {
-    cursor: pointer;
-  }
-
-  #light-dark-mode {
-    display: flex;
-  }
-
-  #light,
-  #dark {
-    font-size: 11px;
-  }
-  .opaqueFifty {
-    opacity: 0.5;
-  }
-}
-
-button {
-  text-transform: uppercase;
-  padding: 5px;
-  margin-top: 25px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-h1 {
-  text-transform: uppercase;
-}
-
-h2 {
-  margin-top: 50px;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-a:hover {
-  cursor: pointer;
-  font-size: 101%;
-}
-
-#intro {
+#home {
   margin-top: 33vh;
 }
 
-#about-me {
+#about,
+#resume,
+#contact {
   margin-top: 72vh;
-}
-
-#resume {
-  margin-top: 72vh;
-
-  .section {
-    padding: 0;
-  }
-
-  .section > * {
-    padding: 0;
-    margin: 0;
-  }
-
-  .margin-top {
-    margin-top: 25px;
-  }
-
-  #more-education,
-  #more-jobs {
-    margin-top: 6px;
-  }
 }
 
 #contact {
-  margin-top: 72vh;
   height: 55vh;
-}
-
-// Collapsible
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  border: none;
-  text-align: left;
-  font-size: 9px;
-  border: 1px solid white;
-  border-radius: 5px;
-  text-transform: lowercase;
-  padding: 1px 6px;
-  margin-top: 5px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.collapsible:hover {
-  background-color: #ccc;
-}
-
-/* Style the collapsible content. Note: hidden by default */
-.content {
-  background-color: #f1f1f1;
-  color: black;
-  padding: 6px;
-  border-radius: 6px;
-
-  .section {
-    color: black;
-    font-size: 80%;
-  }
-  .margin-top-12 {
-    margin-top: 12px;
-  }
-  a {
-    color: black;
-  }
 }

@@ -1,0 +1,1 @@
+# I like the concept of platonic, or form here, but form is occupied by angular forms or web forms, which would be confusing to most people. Should I use my convention or the industry convention of "models" or "interfaces"? I will go with forms here and go with confusion as OK as a cost of authenticity & sharpness/clarity for my self.

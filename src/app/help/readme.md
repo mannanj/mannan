@@ -1,0 +1,1 @@
+# I like this convention for helper files, keeping it simple and minimal, help.ts, with importable and findability for each sub type under (i.e. help.vew shows all vew functions, without needing to important view and remember what it is in each component (in theory).)

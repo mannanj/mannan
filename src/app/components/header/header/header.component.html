@@ -1,0 +1,18 @@
+<div id="main">
+    <div id="picture" (click)="cycleColor()">
+        <img src="assets/mannan.jpg" width="50" height="50">
+        <div id="light-dark-mode">
+          <a id="sun" [ngClass]="{ opaqueFifty: (color !== Colors.sun) }">🌞</a>
+          <a id="moon" [ngClass]="{ opaqueFifty: (color !== Colors.moon) }">🌛</a>
+        </div>
+      </div>
+    
+      <div></div>
+    
+      <div id="links">
+        <a id="home-link" [ngClass]="{ selected: link === 'home' }" class="link" (click)="navService.goTo(navService.Links.home)">Home</a>
+        <a id="about-link" [ngClass]="{ selected: link === 'about' }" class="link" (click)="navService.goTo(navService.Links.about)">About</a>
+        <a id="resume-link" [ngClass]="{ selected: link === 'resume' }" class="link" (click)="navService.goTo(navService.Links.resume)">Resume</a>
+        <a id="contact-link" [ngClass]="{ selected: link === 'contact' }" class="link" (click)="navService.goTo(navService.Links.contact)">Contact</a>
+      </div>
+</div>
