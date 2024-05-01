@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
@@ -11,6 +11,8 @@ import { NavigationService } from 'src/app/services/navigation.service';
 export class AboutComponent {
   link: Links;
   private _unsubscribe$ = new Subject<void>();
+  @ViewChild('main') elementRef: ElementRef;
+  intersectionObserver: IntersectionObserver;
 
   constructor(public navService: NavigationService) {}
 
@@ -27,5 +29,10 @@ export class AboutComponent {
     this.navService.selectedLink$
     .pipe(takeUntil(this._unsubscribe$))
     .subscribe((link: Links) => this.link = link);
+  }
+
+  ngAfterViewInit() {
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.about, 0.15);
+    this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 }

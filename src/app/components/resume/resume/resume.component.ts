@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
@@ -11,6 +11,8 @@ import { NavigationService } from 'src/app/services/navigation.service';
 export class ResumeComponent {
   link: Links;
   private _unsubscribe$ = new Subject<void>();
+  @ViewChild('main') elementRef: ElementRef;
+  intersectionObserver: IntersectionObserver;
 
   constructor(public navService: NavigationService) {}
 
@@ -37,6 +39,10 @@ export class ResumeComponent {
     .subscribe((link: Links) => this.link = link);
   }
 
+  ngAfterViewInit() {
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.resume, 0.1);
+    this.intersectionObserver.observe(this.elementRef.nativeElement);
+  }
 
   // Collapsibles
   toggleDisplayMoreEd(): void {

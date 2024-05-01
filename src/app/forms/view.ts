@@ -3,4 +3,4 @@ export enum Links {
     about = 'about',
     resume = 'resume',
     contact = 'contact'
-  }
+}

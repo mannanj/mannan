@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { Links } from 'src/app/forms/view';
@@ -11,6 +11,8 @@ import { Links } from 'src/app/forms/view';
 export class HomeComponent {
   link: Links;
   private _unsubscribe$ = new Subject<void>();
+  @ViewChild('main') elementRef: ElementRef;
+  intersectionObserver: IntersectionObserver;
 
   constructor(public navService: NavigationService) {}
 
@@ -20,7 +22,8 @@ export class HomeComponent {
 
   ngOnDestroy(): void {
     this._unsubscribe$.next();
-    this._unsubscribe$.complete();      
+    this._unsubscribe$.complete();     
+    this.intersectionObserver.disconnect();
   }
 
   _getData(): void {
@@ -29,4 +32,8 @@ export class HomeComponent {
     .subscribe((link: Links) => this.link = link);
   }
 
+  ngAfterViewInit() {
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.home, 0.2);
+    this.intersectionObserver.observe(this.elementRef.nativeElement);
+  }
 }
