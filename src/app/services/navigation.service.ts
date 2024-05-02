@@ -16,7 +16,8 @@ export class NavigationService {
 
   goTo(link: Links): any {
     this.selectedLink$.next(link);
-    help.vew.scrollToSection(link);
+    const offsetPx = help.vew.determineOffsetPx(link);
+    help.vew.scrollToSection(link, offsetPx);
   }
 
   /**

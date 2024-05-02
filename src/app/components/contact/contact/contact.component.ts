@@ -32,7 +32,7 @@ export class ContactComponent {
   }
 
   ngAfterViewInit() {
-    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.contact, 0.2);
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.contact, 0.99);
     this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 

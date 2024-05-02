@@ -40,7 +40,7 @@ export class ResumeComponent {
   }
 
   ngAfterViewInit() {
-    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.resume, 0.1);
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.resume, 0.33);
     this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 

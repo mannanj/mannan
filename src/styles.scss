@@ -3,3 +3,52 @@ body {
   color: #ffffff;
   background-color: #0b0b0b;
 }
+
+h1 {
+  text-transform: uppercase;
+  font-size: 4em;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 8px 25px;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.section {
+  padding: 0;
+}
+
+.section > * {
+  padding: 0;
+  margin: 0;
+}
+
+.margin-top {
+  margin-top: 25px;
+}
+
+#more-education,
+#more-jobs {
+  margin-top: 6px;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+  font-size: 101%;
+  text-decoration: underline;
+}

@@ -1,15 +1,20 @@
 h1 {
-  text-transform: uppercase;
+  text-align: end;
 }
 
-button {
-  text-transform: uppercase;
-  padding: 5px;
-  margin-top: 25px;
-  transition: all 0.3s ease;
+.flex-center {
+  display: flex;
+  justify-content: space-around;
 }
 
-button:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+img {
+  border-radius: 50%;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
 }

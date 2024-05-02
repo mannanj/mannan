@@ -8,12 +8,14 @@
   background-color: #0b0b0b;
 
   border-bottom: 1px solid white;
-  height: 60px;
+  height: 66px;
 }
 
 #picture {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: -99;
 }
 
 #picture:hover {
@@ -48,4 +50,11 @@ img {
 }
 .opaqueFifty {
   opacity: 0.5;
+}
+
+a {
+  text-underline-offset: 25px;
+}
+a:hover {
+  text-underline-offset: 23px;
 }

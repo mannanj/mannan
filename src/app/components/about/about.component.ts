@@ -32,7 +32,7 @@ export class AboutComponent {
   }
 
   ngAfterViewInit() {
-    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.about, 0.15);
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.about, 0.66);
     this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 }

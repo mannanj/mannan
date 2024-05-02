@@ -33,7 +33,7 @@ export class HomeComponent {
   }
 
   ngAfterViewInit() {
-    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.home, 0.2);
+    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.home, 0.99);
     this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 }
