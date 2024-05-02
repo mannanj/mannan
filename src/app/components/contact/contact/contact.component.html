@@ -1,12 +1,12 @@
 <div #main>
     <h1>Contact</h1>
     <hr>
-    <a href= "mailto: mannanjavid@protonmail.com"> mannanjavid@protonmail.com </a>
-    <!-- @TODO: man@javman.is set up the domain. -->
-    <!-- Other domains: manishere.com, manisher.com -->
-    <br>
-    <a href="tel:15712288302">+1 (571) 228-8302</a>
-    <br>
-    <p>Alexandria, Virginia</p>
-    <button (click)="navService.goTo(navService.Links.home)">Back To Home</button>
+    <div class="flex-column margin-top-60">
+        <a href= "mailto: mannanjavid@protonmail.com"> mannanjavid@protonmail.com </a>
+        <!-- @TODO: man@javman.is set up the domain. -->
+        <!-- Other domains: manishere.com, manisher.com -->
+        <a href="tel:15712288302" class="margin-top-12 margin-bottom-12">+1 (571) 228-8302</a>
+        <p class="margin-0">Alexandria, Virginia</p>
+    </div>
+    <button (click)="navService.goTo(navService.Links.home)"  class="margin-top-50" >Back To Home</button>
 </div>

@@ -1,7 +1,7 @@
 <div #main>
   <h1>Resume</h1>
   <hr>
-  <h2>Education</h2>
+  <h2 class="margin-top-60" >Education</h2>
   <div class="section">
     <b>George Mason University</b>
     <p>2009-2015</p>
@@ -167,5 +167,5 @@
     <button *ngIf="moreECSectionsShown === 2" type="button" class="collapsible" (click)="toggleDisplayNoMoreEC()">less</button>
   </div>
   
-  <button (click)="navService.goTo(navService.Links.contact)">Get In Touch</button>
+  <button (click)="navService.goTo(navService.Links.contact)"  class="margin-top-60" >Get In Touch</button>
 </div>

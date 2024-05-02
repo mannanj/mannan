@@ -4,6 +4,13 @@
   #body {
     margin: 20vh 28vw;
   }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #body {
+      margin: 10vh 14vw;
+    }
+  }
 }
 
 #home,
