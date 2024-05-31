@@ -13,17 +13,17 @@
       <div *ngIf="displayMoreEd" class="content">
   
         <div *ngIf="moreEdSectionsShown >=1"  class="section">
-          <a href="http://www.georgemason.com" target="_blank"><b>ARCHR Humanoid Robot</b></a>
+          <a href="http://wiki.lofarolabs.com/index.php/Archr" target="_blank"><b>ARCHR Humanoid Robot</b></a>
           <p>2013-2014</p>
           <p>
             Lead Developer
           </p>
           <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, AWS, Java, innovation</p>
-          <p style="font-size: 12px; margin-top: 6px;">Humanoid robot published, taken to DARPA robotics challenge, and designed to address Daiichi Nuclear disaster response. Simplistic one-to-one hand-puppetered mimickry with Oculus VR streaming, controllers for ARCHR, Mini-Hubo, and Baxter robots.</p>
+          <p style="font-size: 12px; margin-top: 6px;">Humanoid robot <span><a href="assets/data/documents/GMU-ARCHR.pdf" download="ARCHR - Apparatus for Remote Control of Humanoid Robot" style="color: #039be5;">published</a></span>, taken to DARPA robotics challenge, and designed to address Daiichi Nuclear disaster response. Simplistic one-to-one hand-puppetered mimickry with Oculus VR streaming, controllers for ARCHR, Mini-Hubo, and Baxter robots.</p>
         </div>
   
         <div *ngIf="moreEdSectionsShown >=1" class="section margin-top-12">
-          <a href="http://www.georgemason.com" target="_blank"><b>Solar Collaborative Workspace</b></a>
+          <a><b>Solar Collaborative Workspace</b></a>
           <p>2013-2014</p>
           <p>
             Lead Developer
@@ -34,7 +34,7 @@
   
         <!-- TODO: Move to extracurricular. -->
         <div *ngIf="moreEdSectionsShown == 2" class="section margin-top-12">
-          <a href="http://www.georgemason.com" target="_blank"><b>DC Dome Light (family)</b></a>
+          <a><b>DC Dome Light (family)</b></a>
           <p>2014</p>
           <p>
             CAD Designer
@@ -102,7 +102,7 @@
           Software Engineer
         </p>
         <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, jQuery, Python, Python-Flask, research</p>
-        <p style="font-size: 12px; margin-top: 6px;">Fullstack engineer for America's cooperatives. Contract role committed to stewarding sustainability in energy generation.</p>
+        <p style="font-size: 12px; margin-top: 6px;">Fullstack engineer for America's cooperatives. Committed to stewarding sustainability in energy generation and <a href="assets/data/documents/OMF-DR.pdf" download="OMF-Energy-Demand-Response" style="color: #039be5;">cutting edge research.</a></p>
       </div>
   
       <div *ngIf="moreJobsSectionsShown == 2" class="section margin-top">
@@ -122,7 +122,7 @@
   </div>
   
   <h2>Extracurriculars</h2>
-  
+
   <div class="section margin-top">
     <b>Substitute Teacher</b>
     <p>2024</p>
@@ -131,9 +131,8 @@
   
   <div id="more-ec">
     <div *ngIf="displayMoreEC">
-  
       <div *ngIf="moreECSectionsShown >=1"  class="section margin-top">
-        <a href="https://appliedjung.com" target="_blank"><b>Volunteering</b></a>
+        <b>Volunteering</b>
         <p>2013-present</p>
         <p style="font-size: 12px; margin-top: 6px;">
           Volunteering and service across a variety of initiatives including: Food distribution and drives, STEM Students Lego Mindstorm & ARCHR robotics demo, Local community initiatives for the underserved and more.
@@ -149,20 +148,27 @@
       <div *ngIf="moreECSectionsShown == 2" class="section margin-top">
         <a href="https://appliedjung.com" target="_blank"><b>Applied Jung,</b></a>
         <br>
-        <a href="https://embodiedmasculine.com/missing-nutrient-in-masculinity/" target="_blank"> <b>Embodied Masculinity</b></a>
+        <b>Embodied Masculinity</b>
         <p>2021-present</p>
         <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Analytical psychology, Internal family systems, embodiment, yoga, mindfulness</p>
         <p style="font-size: 12px; margin-top: 6px;">Initiate into Jungian individuation through study of analytical psychology and it's application through embodiment, analysis, and awareness training. Initiated through rites of passage into a positive and nurturing masculinity.</p>
       </div>
   
-      <div *ngIf="moreECSectionsShown == 2" class="section margin-top">
+      <!-- <div *ngIf="moreECSectionsShown == 2" class="section margin-top">
         <a href="https://thebeingman.com" target="_blank"><b>Being Man Project</b></a>
         <br>
         <p>2024</p>
         <p style="font-size: 12px; margin-top: 6px;">Founder of a community initiative to offer a space for men to receive support, develop trust, and cultivate brotherly bonds.</p>
+      </div> -->
+
+      <div *ngIf="moreECSectionsShown == 2" class="section margin-top">
+        <b>Published Works</b>
+        <p style="font-size: 14px;">&#x2022; <a href="assets/data/documents/GMU-ARCHR.pdf" download="ARCHR-Apparatus-for-Remote-Control of-Humanoid-Robot" style="color: #039be5;">Apparatus for Remote Control of Humanoid Robots</a>
+        </p>
+        <p style="font-size: 14px;">&#x2022; <a href="assets/data/documents/OMF-DR.pdf" download="OMF-Energy-Demand-Response" style="color: #039be5;">Open Modeling Framework Demand Response</a></p>
       </div>
     </div>
-  
+
     <button *ngIf="moreECSectionsShown < 2" type="button" class="collapsible" (click)="toggleDisplayMoreEC()">more</button>
     <button *ngIf="moreECSectionsShown === 2" type="button" class="collapsible" (click)="toggleDisplayNoMoreEC()">less</button>
   </div>
