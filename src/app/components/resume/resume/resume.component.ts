@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
 
@@ -8,13 +7,11 @@ import { NavigationService } from 'src/app/services/navigation.service';
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
-export class ResumeComponent {
-  link: Links;
-  private _unsubscribe$ = new Subject<void>();
+export class ResumeComponent implements AfterViewInit, OnDestroy {
+  @Input() link: Links;
+  @Input() navService: NavigationService;
   @ViewChild('main') elementRef: ElementRef;
   intersectionObserver: IntersectionObserver;
-
-  constructor(public navService: NavigationService) {}
 
   // Collapsibles
   displayMoreEd = false;
@@ -24,23 +21,12 @@ export class ResumeComponent {
   displayMoreEC = false;
   moreECSectionsShown = 0;
 
-  ngOnInit() {
-    this._getData();
-  }
-
   ngOnDestroy(): void {
-    this._unsubscribe$.next();
-    this._unsubscribe$.complete();      
-  }
-
-  _getData(): void {
-    this.navService.selectedLink$
-    .pipe(takeUntil(this._unsubscribe$))
-    .subscribe((link: Links) => this.link = link);
+    this.intersectionObserver.disconnect();
   }
 
   ngAfterViewInit() {
-    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.resume, 0.33);
+    this.intersectionObserver = this.navService.makeIntersectionObsAndSetFlags(Links.resume, 0.33);
     this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 

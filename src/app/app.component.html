@@ -5,21 +5,21 @@
     <app-header></app-header>
   </div>
 
-  <div id="body">
+  <div id="body" *ngIf="(this.navService.selectedLink$ | async) as link">
     <div id="home">
-      <app-home></app-home>
+      <app-home [link]="link" [navService]="navService"></app-home>
     </div>
 
     <div id="about">
-      <app-about></app-about>
+      <app-about [link]="link" [navService]="navService"></app-about>
     </div>
   
     <div id="resume">
-      <app-resume></app-resume>
+      <app-resume [link]="link" [navService]="navService"></app-resume>
     </div>
 
     <div id="contact">
-      <app-contact></app-contact>
+      <app-contact [link]="link" [navService]="navService"></app-contact>
     </div>
   </div>
 

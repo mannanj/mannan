@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
 
@@ -8,31 +7,17 @@ import { NavigationService } from 'src/app/services/navigation.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
-  link: Links;
-  private _unsubscribe$ = new Subject<void>();
+export class AboutComponent implements AfterViewInit, OnDestroy {
+  @Input() link: Links;
+  @Input() navService: NavigationService;
   @ViewChild('main') elementRef: ElementRef;
   intersectionObserver: IntersectionObserver;
 
-  constructor(public navService: NavigationService) {}
-
-  ngOnInit() {
-    this._getData();
-  }
-
   ngOnDestroy(): void {
-    this._unsubscribe$.next();
-    this._unsubscribe$.complete();      
+    this.intersectionObserver.disconnect();
   }
-
-  _getData(): void {
-    this.navService.selectedLink$
-    .pipe(takeUntil(this._unsubscribe$))
-    .subscribe((link: Links) => this.link = link);
-  }
-
   ngAfterViewInit() {
-    this.intersectionObserver = this.navService.checkIfComponentIsVisible(Links.about, 0.66);
+    this.intersectionObserver = this.navService.makeIntersectionObsAndSetFlags(Links.about, 0.66);
     this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 }

@@ -16,8 +16,7 @@ export class NavigationService {
 
   goTo(link: Links): any {
     this.selectedLink$.next(link);
-    const offsetPx = help.vew.determineOffsetPx(link);
-    help.vew.scrollToSection(link, offsetPx);
+    help.vew.scrollToSection(link);
   }
 
   /**
@@ -30,7 +29,18 @@ export class NavigationService {
     this.visibleComponent$.next(link);
   }
 
-  checkIfComponentIsVisible(component: Links, threshold: number): IntersectionObserver {
+  /**
+   * 
+   * Creates an IntersectionObserver to check if a component became
+   * visible in the page, and if so, then sets our flags accordingly
+   * and emits an update to the link subject.
+   * 
+   * @param component component to observe
+   * @param threshold number corresponding to top-level document viewport
+   * @returns 
+   */
+
+  makeIntersectionObsAndSetFlags(component: Links, threshold: number): IntersectionObserver {
     return new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {

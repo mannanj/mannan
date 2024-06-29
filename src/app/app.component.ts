@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationService } from './services/navigation.service';
 
 @Component({
@@ -8,4 +8,8 @@ import { NavigationService } from './services/navigation.service';
 })
 export class AppComponent {
   title = 'mannan';
+
+  constructor(
+    public navService: NavigationService
+  ) {}
 }
