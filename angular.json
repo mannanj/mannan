@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mannan:build:production"
+              "buildTarget": "mannan:build:production"
             },
             "development": {
-              "browserTarget": "mannan:build:development"
+              "buildTarget": "mannan:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mannan:build"
+            "buildTarget": "mannan:build"
           }
         },
         "test": {
