@@ -1,27 +1,161 @@
-# Mannan
+# Mannan - Personal Portfolio Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+A modern, responsive personal portfolio website built with Angular 15 and deployed on Firebase.
 
-## Development server
+## 🚀 Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Visit: [https://mannan-javid.web.app](https://mannan-javid.web.app)
 
-## Code scaffolding
+## 🛠️ Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Framework:** Angular 15.2.6
+- **Language:** TypeScript 4.9.4
+- **Styling:** SCSS
+- **Hosting:** Firebase
+- **Testing:** Karma & Jasmine
+- **Code Quality:** ESLint & Prettier
 
-## Build
+## 📦 Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/mannan.git
 
-## Running unit tests
+# Navigate to project directory
+cd mannan
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Install dependencies
+npm install
 
-## Running end-to-end tests
+# Start development server
+npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Navigate to `http://localhost:4200/` to view the application.
 
-## Further help
+## 🏗️ Project Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── about/          # About section
+│   │   ├── contact/        # Contact information
+│   │   ├── header/         # Navigation header
+│   │   ├── home/           # Landing page
+│   │   └── resume/         # Resume/CV section
+│   ├── forms/              # Form utilities
+│   └── app.module.ts       # Root module
+├── assets/                 # Static assets
+└── styles.scss            # Global styles
+```
+
+## 📝 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start development server on port 4200 |
+| `npm run build` | Build for production |
+| `npm run watch` | Build in watch mode |
+| `npm test` | Run unit tests with Karma |
+| `ng generate component [name]` | Generate new component |
+
+## 🚀 Deployment
+
+### Deploy to Firebase (Primary)
+
+```bash
+# Build the project
+npm run build
+
+# Deploy to Firebase
+ng deploy
+```
+
+Your site will be live at: https://mannan-javid.web.app
+
+### Alternative Deployment Options
+
+**GitHub Pages:**
+```bash
+ng add angular-cli-ghpages
+ng deploy --base-href=/mannan/
+```
+
+**Netlify:**
+1. Run `npm run build`
+2. Drag `dist/mannan` folder to [Netlify Drop](https://app.netlify.com/drop)
+
+**Vercel:**
+```bash
+npm i -g vercel
+npm run build
+vercel --prod
+```
+
+## 🧪 Testing
+
+```bash
+# Run unit tests
+npm test
+
+# Run tests in headless mode
+ng test --browsers=ChromeHeadless --watch=false
+```
+
+## 📏 Code Quality
+
+The project uses ESLint and Prettier for code consistency:
+
+```bash
+# Check linting
+ng lint
+
+# Format code with Prettier
+npx prettier --write .
+```
+
+### Configuration
+- **Max line length:** 120 characters
+- **Component prefix:** `app-`
+- **Style:** SCSS with component encapsulation
+- **Quote style:** Single quotes
+
+## 🔧 Development
+
+### Generate Components
+
+```bash
+# Generate a new component
+ng generate component components/[name]
+
+# Generate a service
+ng generate service services/[name]
+
+# Generate other artifacts
+ng generate directive|pipe|class|guard|interface|enum|module
+```
+
+### Build Configuration
+
+**Production Build:**
+- Optimized bundles
+- Tree shaking
+- Ahead-of-Time (AOT) compilation
+- Build budget warnings (500kb initial, 1mb max)
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 🤝 Contributing
+
+This is a personal project. Pull requests are not accepted.
+
+## 📧 Contact
+
+For any inquiries, please reach out through the contact form on the website.
+
+---
+
+Built with Angular CLI version 15.2.6
