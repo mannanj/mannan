@@ -22,7 +22,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-prettier": "^0.0.0-empty",
-    "firebase-tools": "^12.9.1",
+    "firebase-tools": "^14.19.0",
     "prettier": "^3.2.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
