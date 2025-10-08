@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { PdfGeneratorService } from 'src/app/services/pdf-generator.service';
 import { fadeIn, scaleIn, slideInLeft, slideInRight } from 'src/app/animations/animations';
 
 @Component({
@@ -16,6 +17,8 @@ export class ResumeComponent implements AfterViewInit, OnDestroy {
   @ViewChild('main') elementRef: ElementRef;
   intersectionObserver: IntersectionObserver;
 
+  constructor(private pdfGeneratorService: PdfGeneratorService) {}
+
   // Collapsibles
   displayMoreEd = false;
   moreEdSectionsShown = 0;
@@ -23,6 +26,9 @@ export class ResumeComponent implements AfterViewInit, OnDestroy {
   moreJobsSectionsShown = 0;
   displayMoreEC = false;
   moreECSectionsShown = 0;
+  displayMoreCapitalOne = false;
+  moreCapitalOneSectionsShown = 0;
+
 
   ngOnDestroy(): void {
     this.intersectionObserver.disconnect();
@@ -62,5 +68,19 @@ export class ResumeComponent implements AfterViewInit, OnDestroy {
   toggleDisplayNoMoreEC(): void {
     this.displayMoreEC = false;
     this.moreECSectionsShown = 0;
+  }
+
+  toggleDisplayMoreCapitalOne(): void {
+    this.displayMoreCapitalOne = true;
+    this.moreCapitalOneSectionsShown += 1;
+  }
+
+  toggleDisplayNoMoreCapitalOne(): void {
+    this.displayMoreCapitalOne = false;
+    this.moreCapitalOneSectionsShown = 0;
+  }
+
+  downloadResume(): void {
+    this.pdfGeneratorService.generateResumePDF();
   }
 }

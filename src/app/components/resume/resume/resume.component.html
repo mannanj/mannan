@@ -52,6 +52,28 @@
   
   <h2 @slideInLeft>Employment History</h2>
   <div class="section margin-top">
+    <a href="https://www.capitalone.com/" target="_blank"><b>Capital One</b></a>
+    <p>2024-2025, 2021-2022</p>
+    <p>
+      Principal Software Engineer
+    </p>
+    <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Security, Splunk, New Relic, PagerDuty, Springboot, Astro, SolidJS, Node.js, DevSecOps</p>
+    <p style="font-size: 12px; margin-top: 6px;">Led security operations, remediation, and engineering for high-scale applications serving 3m+ DAU, achieving zero security incidents while delivering secure microservices and customer-facing features.</p>
+
+    <div id="more-capital-one">
+      <div *ngIf="displayMoreCapitalOne" class="content" @fadeIn>
+        <p style="font-size: 12px; margin-top: 6px;">
+        ▸ Engineered high-traffic microservices and customer-facing features (Trade-In, Auto Loan Rates, SEO) using modern frameworks (Astro, SolidJS, Node.js), architecting scalable solutions serving millions of daily users with robust performance and zero production vulnerabilities.<br>
+        ▸ Led production security monitoring and incident response operations using Splunk and New Relic, creating custom SPL queries for threat detection, building real-time alerting dashboards, and providing 24/7 on-call support via PagerDuty to ensure rapid response to security events.<br>
+        ▸ Drove platform reliability and security remediation initiatives across 3M+ DAU applications, leading Springboot upgrades and vulnerability patching programs, enhancing CI/CD pipelines to strengthen cloud security posture, and reducing API failures by 100K through systematic infrastructure improvements.<br>
+        </p>
+      </div>
+      <button *ngIf="!displayMoreCapitalOne" type="button" class="collapsible" (click)="toggleDisplayMoreCapitalOne()">more</button>
+      <button *ngIf="displayMoreCapitalOne" type="button" class="collapsible" (click)="toggleDisplayNoMoreCapitalOne()">less</button>
+    </div>
+  </div>
+
+  <div class="section margin-top">
     <a href="https://www.publicissapient.com/" target="_blank"><b>Publicis Sapient</b></a>
     <p>2022-2023</p>
     <p>
@@ -60,16 +82,6 @@
     <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, ArcGIS, AWS, Java, leadership</p>
     <p style="font-size: 12px; margin-top: 6px;">Led implementation and oversight of developers to deliver features ahead of schedule and improve company-wide velocity. Initiated and introduced major feature rewrites.</p>
     <!-- Do I say it was due to personal reasons? which feels more truthful ... now. -->
-  </div>
-  
-  <div class="section margin-top">
-    <a href="https://www.capitalone.com/" target="_blank"><b>Capital One</b></a>
-    <p>2021-2022</p>
-    <p>
-      Senior Software Engineer
-    </p>
-    <p style="font-size: 12px; font-style: italic; margin-top: 6px;">Javascript, Typescript, Angular, AWS, Java, innovation</p>
-    <p style="font-size: 12px; margin-top: 6px;">Senior engineer delivered modernization for high visibility bank and credit features. On-call for weekly deployments. Took a design risk and won a hackathon.</p>
   </div>
   
   <div class="section margin-top">

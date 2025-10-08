@@ -2,6 +2,20 @@ h1 {
   text-align: end;
 }
 
+.download-link {
+  display: block;
+  text-align: end;
+  color: #039be5;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+  text-decoration: underline;
+
+  &:hover {
+    color: #0277bd;
+  }
+}
+
 // Collapsible
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
