@@ -1,11 +1,11 @@
 # Mannan - Angular Personal Website
 
 ## Project Overview
-This is an Angular 15.2.6 personal website/portfolio application with Firebase integration for deployment.
+This is an Angular 20.3.4 personal website/portfolio application with Firebase integration for deployment.
 
 ## Technology Stack
-- **Framework**: Angular 15.2.6
-- **Language**: TypeScript 4.9.4
+- **Framework**: Angular 20.3.4
+- **Language**: TypeScript 5.8.3
 - **Styling**: SCSS
 - **Deployment**: Firebase Hosting
 - **Testing**: Karma with Jasmine
