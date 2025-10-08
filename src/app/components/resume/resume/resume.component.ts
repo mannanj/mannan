@@ -3,9 +3,10 @@ import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
-  selector: 'app-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.scss']
+    selector: 'app-resume',
+    templateUrl: './resume.component.html',
+    styleUrls: ['./resume.component.scss'],
+    standalone: false
 })
 export class ResumeComponent implements AfterViewInit, OnDestroy {
   @Input() link: Links;

@@ -3,9 +3,10 @@ import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss'],
+    standalone: false
 })
 export class AboutComponent implements AfterViewInit, OnDestroy {
   @Input() link: Links;
