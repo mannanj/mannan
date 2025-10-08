@@ -1,11 +1,13 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { scaleIn, fadeIn, slideInLeft } from 'src/app/animations/animations';
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss'],
+    animations: [scaleIn, fadeIn, slideInLeft],
     standalone: false
 })
 export class ContactComponent implements AfterViewInit, OnDestroy {

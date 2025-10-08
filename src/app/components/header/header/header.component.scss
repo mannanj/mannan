@@ -40,9 +40,27 @@ img {
 }
 .link {
   cursor: pointer;
+  position: relative;
 }
-.selected {
-  text-decoration: underline;
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -25px;
+  left: 0;
+  background-color: #4fc3f7;
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.selected::after {
+  width: 100%;
+  background-color: #039be5;
 }
 
 #light-dark-mode {
@@ -57,9 +75,3 @@ img {
   opacity: 0.5;
 }
 
-a {
-  text-underline-offset: 25px;
-}
-a:hover {
-  text-underline-offset: 23px;
-}

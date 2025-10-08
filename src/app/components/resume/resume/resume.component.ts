@@ -1,11 +1,13 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Links } from 'src/app/forms/view';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { fadeIn, scaleIn, slideInLeft, slideInRight } from 'src/app/animations/animations';
 
 @Component({
     selector: 'app-resume',
     templateUrl: './resume.component.html',
     styleUrls: ['./resume.component.scss'],
+    animations: [fadeIn, scaleIn, slideInLeft, slideInRight],
     standalone: false
 })
 export class ResumeComponent implements AfterViewInit, OnDestroy {

@@ -1,6 +1,6 @@
 # Mannan - Personal Portfolio Website
 
-A modern, responsive personal portfolio website built with Angular 15 and deployed on Firebase.
+A modern, responsive personal portfolio website built with Angular and deployed on Firebase.
 
 ## 🚀 Live Demo
 
@@ -8,7 +8,7 @@ Visit: [https://mannan-javid.web.app](https://mannan-javid.web.app)
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Angular 15.2.6
+- **Framework:** Angular 20+
 - **Language:** TypeScript 4.9.4
 - **Styling:** SCSS
 - **Hosting:** Firebase
@@ -52,13 +52,14 @@ src/
 
 ## 📝 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start development server on port 4200 |
-| `npm run build` | Build for production |
-| `npm run watch` | Build in watch mode |
-| `npm test` | Run unit tests with Karma |
-| `ng generate component [name]` | Generate new component |
+
+| Command                        | Description                           |
+| -------------------------------- | --------------------------------------- |
+| `npm start`                    | Start development server on port 4200 |
+| `npm run build`                | Build for production                  |
+| `npm run watch`                | Build in watch mode                   |
+| `npm test`                     | Run unit tests with Karma             |
+| `ng generate component [name]` | Generate new component                |
 
 ## 🚀 Deployment
 
@@ -77,16 +78,19 @@ Your site will be live at: https://mannan-javid.web.app
 ### Alternative Deployment Options
 
 **GitHub Pages:**
+
 ```bash
 ng add angular-cli-ghpages
 ng deploy --base-href=/mannan/
 ```
 
 **Netlify:**
+
 1. Run `npm run build`
 2. Drag `dist/mannan` folder to [Netlify Drop](https://app.netlify.com/drop)
 
 **Vercel:**
+
 ```bash
 npm i -g vercel
 npm run build
@@ -116,6 +120,7 @@ npx prettier --write .
 ```
 
 ### Configuration
+
 - **Max line length:** 120 characters
 - **Component prefix:** `app-`
 - **Style:** SCSS with component encapsulation
@@ -139,6 +144,7 @@ ng generate directive|pipe|class|guard|interface|enum|module
 ### Build Configuration
 
 **Production Build:**
+
 - Optimized bundles
 - Tree shaking
 - Ahead-of-Time (AOT) compilation

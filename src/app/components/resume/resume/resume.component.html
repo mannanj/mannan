@@ -1,7 +1,7 @@
 <div #main>
-  <h1>Resume</h1>
-  <hr>
-  <h2 class="margin-top-60" >Education</h2>
+  <h1 @scaleIn>Resume</h1>
+  <hr @fadeIn>
+  <h2 class="margin-top-60" @slideInLeft>Education</h2>
   <div class="section">
     <b>George Mason University</b>
     <p>2009-2015</p>
@@ -10,7 +10,7 @@
     </p>
   
     <div id="more-education">
-      <div *ngIf="displayMoreEd" class="content">
+      <div *ngIf="displayMoreEd" class="content" @fadeIn>
   
         <div *ngIf="moreEdSectionsShown >=1"  class="section">
           <a href="https://www.youtube.com/watch?v=GSx22ggePHw" target="_blank"><b>ARCHR Humanoid Robot</b></a>
@@ -50,7 +50,7 @@
   
   </div>
   
-  <h2>Employment History</h2>
+  <h2 @slideInLeft>Employment History</h2>
   <div class="section margin-top">
     <a href="https://www.publicissapient.com/" target="_blank"><b>Publicis Sapient</b></a>
     <p>2022-2023</p>
@@ -83,7 +83,7 @@
   </div>
   
   <div id="more-jobs">
-    <div *ngIf="displayMoreJobs">
+    <div *ngIf="displayMoreJobs" @fadeIn>
   
       <div class="section margin-top">
         <a href="https://www.mitre.org/" target="_blank"><b>MITRE Corporation</b></a>
@@ -121,7 +121,7 @@
     <button *ngIf="moreJobsSectionsShown === 2" type="button" class="collapsible" (click)="toggleDisplayNoMoreJobs()">less</button>
   </div>
   
-  <h2>Extracurriculars</h2>
+  <h2 @slideInLeft>Extracurriculars</h2>
 
   <div class="section margin-top">
     <b>Substitute Teacher</b>
@@ -130,7 +130,7 @@
   </div>
   
   <div id="more-ec">
-    <div *ngIf="displayMoreEC">
+    <div *ngIf="displayMoreEC" @fadeIn>
       <div *ngIf="moreECSectionsShown >=1"  class="section margin-top">
         <b>Volunteering</b>
         <p>2013-present</p>
